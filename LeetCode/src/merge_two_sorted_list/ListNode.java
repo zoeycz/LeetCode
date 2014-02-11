@@ -1,4 +1,4 @@
-package linked_list_cycle_ii;
+package merge_two_sorted_list;
 
 public class ListNode {
   int val;
