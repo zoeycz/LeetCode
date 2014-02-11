@@ -1,0 +1,22 @@
+package two_sum;
+
+public class Solution {
+  public int[] twoSum(int[] numbers, int target) {
+    int[] res = new int[2];
+    if (numbers == null || numbers.length < 2)
+      return res;
+
+    Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+    for (int i = 0; i < numbers.length; i++) {
+      int find = target - numbers[i];
+      if (map.containsKey(find)) {
+        res[0] = map.get(find) + 1;
+        res[1] = i + 1;
+        return res;
+      } else {
+        map.put(numbers[i], i);
+      }
+    }
+    return res;
+  }
+}

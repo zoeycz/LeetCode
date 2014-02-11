@@ -1,0 +1,59 @@
+package merge_intervals;
+
+/**
+ * Definition for an interval.
+ * public class Interval {
+ *     int start;
+ *     int end;
+ *     Interval() { start = 0; end = 0; }
+ *     Interval(int s, int e) { start = s; end = e; }
+ * }
+ */
+public class Solution {
+  public ArrayList<Interval> merge(ArrayList<Interval> intervals) {
+      if(intervals == null || intervals.size() == 0) {
+          return new ArrayList<Interval>();
+      }
+      ArrayList<Interval> toMerge = sortStart(intervals);
+      ArrayList<Interval> result = sortedMerge(toMerge);
+      return result;
+  }
+  
+  private ArrayList<Interval> sortedMerge(ArrayList<Interval> intervals) {
+      ArrayList<Interval> result = new ArrayList<Interval>();
+      int index = 0;
+      while(index < intervals.size()) {
+          int start = intervals.get(index).start;
+          int endMax = intervals.get(index).end;
+          index++;
+          while(index < intervals.size() && endMax >= intervals.get(index).start) {
+              endMax = Math.max(endMax, intervals.get(index).end);
+              index++;
+          }
+          result.add(new Interval(start, endMax));
+      }
+      return result;
+  }
+  
+  private ArrayList<Interval> sortStart(ArrayList<Interval> intervals) {
+      Map<Integer, Interval> map = new HashMap<Integer, Interval>();
+      for(int i = 0; i < intervals.size(); i++) {
+          int start = intervals.get(i).start;
+          if(map.get(start) == null) {
+              map.put(start, intervals.get(i));
+          } else {
+              if(intervals.get(i).end > map.get(start).end) {
+                  map.put(start, intervals.get(i));
+              }
+          }
+      }
+      
+      ArrayList<Interval> result = new ArrayList<Interval>();
+      List<Integer> list = new ArrayList<Integer>(map.keySet());
+      Collections.sort(list);
+      for(int i : list) {
+          result.add(map.get(i));
+      }
+      return result;
+  }
+}

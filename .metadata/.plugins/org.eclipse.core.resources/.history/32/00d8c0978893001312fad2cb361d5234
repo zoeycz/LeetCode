@@ -1,0 +1,31 @@
+package pow;
+
+/**
+ * Pow(x,n)
+ * http://oj.leetcode.com/problems/powx-n/
+ * Implement pow(x, n).
+ * Solution: Recursively divide the size by two.
+ * Complexity: Time - O(logN), Space - O(logN)
+ * Attention: Space complexity of recursion.
+ * Recursion gets penalty on performance because of extra stack.
+ * Only tail recursion will be optimized by compiler.
+ * Array is not a good choice with O(N) space complexity.
+ * @author CAI Zhe
+ */
+public class Solution {
+  public double pow(double x, int n) {
+    if (n == 0) {
+      return 1.0;
+    }
+    double half = pow(x, n / 2);
+    if (n % 2 == 0) {
+      return half * half;
+    } else {
+      if (n > 0) {
+        return half * half * x;
+      } else {
+        return half * half / x;
+      }
+    }
+  }
+}

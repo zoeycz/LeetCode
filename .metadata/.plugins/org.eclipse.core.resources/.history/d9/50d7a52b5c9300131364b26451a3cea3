@@ -1,0 +1,61 @@
+package valid_parentheses;
+
+public class Solution {
+  public boolean isValid(String s) {
+      if(s.length() == 0) {
+          return true;
+      } else if(s.length() % 2 == 1) {
+          return false;
+      }
+      int[] pCount = new int[3];
+      LinkedList<Character> list = new LinkedList<Character>();
+      for(int i = 0; i < s.length(); i++) {
+          char current = s.charAt(i);
+          Character last;
+          switch(current) {
+          case '(' : pCount[0]++;
+              list.add('(');
+              break;
+          case '{' : pCount[1]++;
+              list.add('{');
+              break;
+          case '[' : pCount[2]++;
+              list.add('[');
+              break;
+          case ')' : pCount[0]--;
+              if(pCount[0] < 0) {
+                  return false;
+              }
+              last = list.pollLast();
+              if(last == null || last != '(') {
+                  return false;
+              }
+              break;
+          case '}': pCount[1]--;
+              if(pCount[1] < 0) {
+                  return false;
+              }
+              last = list.pollLast();
+              if(last == null || last != '{') {
+                  return false;
+              }
+              break;
+          default: pCount[2]--;
+              if(pCount[2] < 0) {
+                  return false;
+              }
+              last = list.pollLast();
+              if(last == null || last != '[') {
+                  return false;
+              }
+              break;
+          }
+      }
+      for(int i = 0; i < 3; i++) {
+          if(pCount[i] != 0) {
+              return false;
+          }
+      }
+      return true;
+  }
+}

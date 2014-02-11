@@ -1,0 +1,43 @@
+package valid_parentheses;
+
+import java.util.Stack;
+
+public class Solution {
+  public boolean isValid(String s) {
+    if (s == null || s.length() == 0)
+      return true;
+    if (s.length() % 2 == 1)
+      return false;
+
+    Stack<Character> stack = new Stack<Character>();
+    char current;
+    for (int i = 0; i < s.length(); i++) {
+      current = s.charAt(i);
+      if (isClosingSign(current)) {
+        if (stack.isEmpty())
+          return false;
+        if (!matches(stack.pop(), current))
+          return false;
+      } else {
+        stack.push(current);
+      }
+    }
+    if (stack.isEmpty())
+      return true;
+    return false;
+  }
+
+  private boolean matches(char fromStack, char current) {
+    if (fromStack == '(' && current == ')' || fromStack == '['
+        && current == ']' || fromStack == '{' && current == '}')
+      return true;
+    return false;
+  }
+
+  private boolean isClosingSign(char c) {
+    if (c == ')' || c == ']' || c == '}') {
+      return true;
+    }
+    return false;
+  }
+}
