@@ -1,9 +1,11 @@
 package linked_list_cycle_ii;
 
 /**
+ * Linked List Cycle II
+ * http://oj.leetcode.com/problems/linked-list-cycle-ii/
+ * 
  * Given a linked list, return the node where the cycle begins. If there is no
  * cycle, return null.
- * http://oj.leetcode.com/problems/linked-list-cycle-ii/
  * 
  * Solution: Use fast & slow pointers.
  * Fast moves two times faster than the slow.
