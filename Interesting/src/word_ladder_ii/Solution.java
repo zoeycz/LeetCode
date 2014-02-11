@@ -13,6 +13,15 @@ import java.util.Map;
  * 1. Only one letter can be changed at a time
  * 2. Each intermediate word must exist in the dictionary
  * http://oj.leetcode.com/problems/word-ladder-ii/
+ * 
+ * Solution: BFS to find shortest ladder from start
+ * - a Set used for current level and deleted from dict after this level to get
+ * rid of circle, which will not be part of shortest path anyway.
+ * - a Map used to record predecessor of current word to construct result
+ * DFS to construct result from end
+ * 
+ * Complexity: Time - O(n), Space - O(n)
+ * 
  * @author CAI Zhe
  */
 public class Solution {
@@ -26,7 +35,7 @@ public class Solution {
 
   public ArrayList<ArrayList<String>> findLadders(String start, String end,
       HashSet<String> dict) {
-    
+
     // initialize
     res = new ArrayList<ArrayList<String>>();
     if (start == null || end == null || dict == null)
