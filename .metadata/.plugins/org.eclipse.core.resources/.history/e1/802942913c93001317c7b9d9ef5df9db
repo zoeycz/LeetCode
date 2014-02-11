@@ -1,0 +1,27 @@
+package linked_list_cycle_ii;
+
+public class Solution {
+  public ListNode detectCycle(ListNode head) {
+    if (head == null) {
+      return null;
+    }
+    ListNode slow = head;
+    ListNode fast = head;
+
+    do {
+      slow = slow.next;
+      if (fast.next != null) {
+        fast = fast.next.next;
+      }
+      if (fast == null || fast.next == null) {
+        return null;
+      }
+    } while (slow != fast);
+    slow = head;
+    while (slow != fast) {
+      slow = slow.next;
+      fast = fast.next;
+    }
+    return slow;
+  }
+}
