@@ -59,12 +59,14 @@ public class Solution {
   }
 
   private boolean isPalindrome(String s) {
-    char[] charArray = s.toCharArray();
-    int length = charArray.length;
-    for (int i = 0; i < (length + 1) / 2; i++) {
-      if (charArray[i] != charArray[length - 1 - i]) {
+    int i = 0;
+    int j = s.length() - 1;
+    while (i < j) {
+      if (s.charAt(i) != s.charAt(j)) {
         return false;
       }
+      i++;
+      j--;
     }
     return true;
   }

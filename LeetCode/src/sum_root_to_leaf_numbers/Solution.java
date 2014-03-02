@@ -14,7 +14,7 @@ import auxiliary_data_structure.TreeNode;
  * Solution: DFS. Parse current node and number as parameter.
  * When encounter a leaf, add to sum.
  * 
- * Complexity: Time - O(n), Space - O(1)
+ * Complexity: Time - O(E), Space - O(1)
  * 
  * @author CAI Zhe
  */

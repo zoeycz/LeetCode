@@ -13,6 +13,9 @@ package climbing_stairs;
  * 
  * Complexity: Time - O(n), Space - O(n)
  * 
+ * Optimization: Instead of using helper array, use two helper variables to
+ * optimize extra space from O(n) to O(1)
+ * 
  * @author CAI Zhe
  */
 

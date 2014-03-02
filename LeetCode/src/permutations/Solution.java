@@ -5,11 +5,15 @@ import java.util.ArrayList;
 /**
  * Permutations
  * http://oj.leetcode.com/problems/permutations/
+ * 
  * Given a collection of numbers, return all possible permutations.
+ * 
  * Solution: Use a helper function to solve it recursively.
  * For every recursive call, put a number in remainder to prefix group.
  * The code in note stands for another version for O(n^2) space complexity.
- * Complexity: Time - O(n!), Space - O(n)
+ * 
+ * Complexity: Time - O(n^n), Space - O(n)
+ * 
  * @author CAI Zhe
  */
 public class Solution {

@@ -12,7 +12,8 @@ import java.util.ArrayList;
  * Solution: Recursively add one char at a time.
  * Keep track of the total left and right parentheses to ensure correctness.
  * 
- * Complexity: Time - O(2^n), Space - O(n)
+ * Complexity: Time - O(4^n), Space - O(n)
+ * O((2n-1, n)) = O(2^2n) = O(4^n)
  * 
  * @author CAI Zhe
  */

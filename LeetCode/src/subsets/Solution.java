@@ -15,7 +15,7 @@ import java.util.Arrays;
  * Solution: There are altogether 2^n subsets.
  * Use n-digit number as a mask to determine whether element in subset or not.
  * 
- * Complexity: Time - O(2^n), Space - O(1)
+ * Complexity: Time - O(n*2^n), Space - O(1)
  * 
  * @author CAI Zhe
  */

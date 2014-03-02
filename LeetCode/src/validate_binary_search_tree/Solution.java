@@ -16,7 +16,7 @@ import auxiliary_data_structure.TreeNode;
  * 
  * Solution: DFS, carry on boundary to child leaves.
  * 
- * Complexity: Time - O(n), Space - O(logN)
+ * Complexity: Time - O(E), Space - O(logN)
  * 
  * @author CAI Zhe
  */

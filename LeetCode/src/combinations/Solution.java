@@ -12,7 +12,8 @@ import java.util.ArrayList;
  * Solution: Recursively solving. When k == 0, stop and return.
  * Otherwise, add a non-repetitive element and solve (n, k-1).
  * 
- * Complexity: Time - O((n, k)), Space - O((n, k))
+ * Complexity: Time - O(2^N), Space - O(2^N)
+ * O((n, k)) = O(2^n), O(n!) = O(n^n), O(nPk) = O(n^n)
  * 
  * @author CAI Zhe
  */

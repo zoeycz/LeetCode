@@ -49,7 +49,7 @@ public class Solution {
       heap[i] = lists.get(i - 1);
     }
 
-    // Max-heapify from last parent
+    // Min-heapify from last parent
     for (int i = (heap.length - 1) / 2; i > 0; i--) {
       minHeapify(heap, i, i * 2, i * 2 + 1);
     }

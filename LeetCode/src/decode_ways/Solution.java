@@ -17,6 +17,9 @@ package decode_ways;
  * 
  * Complexity: Time - O(n), Space - O(n)
  * 
+ * Optimization: Use helper variables instead of helper array to optimize extra
+ * space from O(n) to O(1).
+ * 
  * @author CAI Zhe
  */
 public class Solution {
