@@ -13,9 +13,10 @@ package decode_ways;
  * Given an encoded message containing digits, determine the total number of
  * ways to decode it.
  * 
- * Solution: DP.
+ * Solution: DP. 
+ * One dimension DP could use constant variable instead of one-dimensional array.
  * 
- * Complexity: Time - O(n), Space - O(n)
+ * Complexity: Time - O(n), Space - O(1)
  * 
  * Optimization: Use helper variables instead of helper array to optimize extra
  * space from O(n) to O(1).
@@ -27,22 +28,34 @@ public class Solution {
     if (s == null || s.length() == 0 || s.charAt(0) == '0') {
       return 0;
     }
+    
     int n = s.length();
-    int[] helper = new int[n + 1];
-    helper[0] = 1;
-    helper[1] = 1;
     char pred = s.charAt(0);
+    if (n == 1) {
+      if (pred == '0') {
+        return 0;
+      } else {
+        return 1;
+      }
+    }
+    
+    int helper = 0;
+    int helper2 = 1;
+    int helper1 = 1;
     char curr;
     for (int i = 1; i < n; i++) {
+      helper = 0;
       curr = s.charAt(i);
       if (curr != '0') {
-        helper[i + 1] = helper[i];
+        helper = helper1;
       }
       if (pred == '1' || (pred == '2' && (curr >= '0' && curr <= '6'))) {
-        helper[i + 1] += helper[i - 1];
+        helper += helper2;
       }
       pred = curr;
+      helper2 = helper1;
+      helper1 = helper;
     }
-    return helper[n];
+    return helper;
   }
 }
