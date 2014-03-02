@@ -1,5 +1,7 @@
 package swap_nodes_in_pairs;
 
+import auxiliary_data_structure.ListNode;
+
 /**
  * Swap Nodes in Pairs
  * http://oj.leetcode.com/problems/swap-nodes-in-pairs/

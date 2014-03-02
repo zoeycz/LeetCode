@@ -2,6 +2,8 @@ package insert_interval;
 
 import java.util.ArrayList;
 
+import auxiliary_data_structure.Interval;
+
 /**
  * Insert Interval
  * http://oj.leetcode.com/problems/insert-interval/

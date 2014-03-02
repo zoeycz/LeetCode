@@ -1,5 +1,7 @@
 package validate_binary_search_tree;
 
+import auxiliary_data_structure.TreeNode;
+
 /**
  * Validate Binary Search Tree
  * http://oj.leetcode.com/problems/validate-binary-search-tree/

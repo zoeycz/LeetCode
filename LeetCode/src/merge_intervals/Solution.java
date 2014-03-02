@@ -3,6 +3,8 @@ package merge_intervals;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import auxiliary_data_structure.Interval;
+
 /**
  * Merge Intervals
  * http://oj.leetcode.com/problems/merge-intervals/

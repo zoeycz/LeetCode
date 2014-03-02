@@ -2,6 +2,8 @@ package binary_tree_level_order_traversal;
 
 import java.util.ArrayList;
 
+import auxiliary_data_structure.TreeNode;
+
 /**
  * Binary Tree Level Order Traversal
  * http://oj.leetcode.com/problems/binary-tree-level-order-traversal/

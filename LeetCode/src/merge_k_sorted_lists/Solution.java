@@ -2,6 +2,8 @@ package merge_k_sorted_lists;
 
 import java.util.ArrayList;
 
+import auxiliary_data_structure.ListNode;
+
 /**
  * Merge k Sorted Lists
  * http://oj.leetcode.com/problems/merge-k-sorted-lists/

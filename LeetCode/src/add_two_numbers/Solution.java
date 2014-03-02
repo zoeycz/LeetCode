@@ -1,5 +1,7 @@
 package add_two_numbers;
 
+import auxiliary_data_structure.ListNode;
+
 /**
  * Add Two Numbers
  * http://oj.leetcode.com/problems/add-two-numbers/

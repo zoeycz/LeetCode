@@ -1,5 +1,7 @@
 package merge_two_sorted_list;
 
+import auxiliary_data_structure.ListNode;
+
 /**
  * Merge Two Sorted List
  * http://oj.leetcode.com/problems/merge-two-sorted-lists/

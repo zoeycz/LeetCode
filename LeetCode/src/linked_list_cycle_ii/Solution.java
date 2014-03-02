@@ -1,5 +1,7 @@
 package linked_list_cycle_ii;
 
+import auxiliary_data_structure.ListNode;
+
 /**
  * Linked List Cycle II
  * http://oj.leetcode.com/problems/linked-list-cycle-ii/
