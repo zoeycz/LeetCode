@@ -11,7 +11,7 @@ package climbing_stairs;
  * Solution: climbStairs(n) = climbStairs(n-1) + climbStairs(n-2)
  * Using a helper array to get rid of repeating computation.
  * 
- * Complexity: Time - O(n), Space - O(n)
+ * Complexity: Time - O(n), Space - O(1)
  * 
  * Optimization: Instead of using helper array, use two helper variables to
  * optimize extra space from O(n) to O(1)
@@ -25,13 +25,15 @@ public class Solution {
       return 0;
     if (n < 3)
       return n;
-    int[] helper = new int[n];
-    for (int i = 0; i < 3; i++) {
-      helper[i] = i;
+
+    int helper = 0;
+    int helper1 = 2;
+    int helper2 = 1;
+    for (int i = 3; i <= n; i++) {
+      helper = helper2 + helper1;
+      helper2 = helper1;
+      helper1 = helper;
     }
-    for (int i = 3; i < n; i++) {
-      helper[i] = helper[i - 1] + helper[i - 2];
-    }
-    return helper[n - 1] + helper[n - 2];
+    return helper;
   }
 }
