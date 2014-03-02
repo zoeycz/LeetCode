@@ -14,8 +14,8 @@ import auxiliary_data_structure.TreeNode;
  * Solution: BFS tree into an ArrayList, use null to separate two level.
  * Keep count of consecutive nulls to detection traversal end.
  * 
- * Optimization: Helper tree can be used directly to get the final result to
- * improve extra space usage from O(n) to O(1).
+ * Optimization: Helper tree can be used as queue and delete head constantly to
+ * minimize extra space.
  * 
  * Complexity: Time - O(n), Space - O(n)
  * 
