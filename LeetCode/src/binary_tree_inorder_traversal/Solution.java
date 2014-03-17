@@ -18,7 +18,7 @@ import auxiliary_data_structure.TreeNode;
  * Check if the stack top is current.right.
  * If so, current = pop() and turn into non-popMode. Else, enter next loop.
  * 
- * Attention: Not change tree structure in process, good for multiple thread.
+ * Attention: Not change tree structure in process, good for multi-thread.
  * 
  * Complexity: Time - O(n), Space - O(n)
  * 
