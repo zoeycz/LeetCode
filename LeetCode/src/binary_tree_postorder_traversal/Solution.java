@@ -22,7 +22,7 @@ import auxiliary_data_structure.TreeNode;
  * 
  * Attention: Not change tree structure in process, good for multi-thread.
  * 
- * Complexity: Time - O(n), Space - O(n)
+ * Complexity: Time - O(n), Space - O(h)
  * 
  * @author CAI Zhe
  */
