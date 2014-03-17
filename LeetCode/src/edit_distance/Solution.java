@@ -18,6 +18,9 @@ package edit_distance;
  * 
  * Complexity: Time - O(mn), Space - O(mn)
  * 
+ * Optimization: DP helper matrix can be compressed into one-dimensional array 
+ * plus O(1) space. Therefore, Space - O(m)
+ * 
  * @author CAI Zhe
  */
 public class Solution {
